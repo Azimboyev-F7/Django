@@ -1,0 +1,13 @@
+body{
+    padding:20px;
+}
+.header{
+    background-color:yellow;
+    color: red;
+}
+.name{
+    color:gray;
+}
+p{
+    font-size:1.3em;
+}
