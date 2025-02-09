@@ -1,0 +1,80 @@
+posts:
+  - model: main.Post
+    pk: 1
+    fields:
+      title: "Getting Started with Django"
+      body: "Django is a powerful web framework for building scalable applications."
+      datetime: 2024-02-09T12:00:00Z
+      update_at: 2024-02-09T12:00:00Z
+
+  - model: main.Post
+    pk: 2
+    fields:
+      title: "Understanding Django Models"
+      body: "Django models help define your database schema using Python code."
+      datetime: 2024-02-08T14:30:00Z
+      update_at: 2024-02-08T15:00:00Z
+
+  - model: main.Post
+    pk: 3
+    fields:
+      title: "Django ORM Explained"
+      body: "Django ORM allows you to interact with the database without writing raw SQL."
+      datetime: 2024-02-07T10:15:00Z
+      update_at: 2024-02-07T10:45:00Z
+
+  - model: main.Post
+    pk: 4
+    fields:
+      title: "Creating Django Views"
+      body: "Django views handle HTTP requests and return responses."
+      datetime: 2024-02-06T09:00:00Z
+      update_at: 2024-02-06T09:30:00Z
+
+  - model: main.Post
+    pk: 5
+    fields:
+      title: "Using Django Templates"
+      body: "Django templates allow you to render dynamic HTML pages efficiently."
+      datetime: 2024-02-05T16:45:00Z
+      update_at: 2024-02-05T17:15:00Z
+
+  - model: main.Post
+    pk: 6
+    fields:
+      title: "Django Forms for User Input"
+      body: "Django Forms simplify user input validation and handling."
+      datetime: 2024-02-04T11:20:00Z
+      update_at: 2024-02-04T11:50:00Z
+
+  - model: main.Post
+    pk: 7
+    fields:
+      title: "Managing Static Files in Django"
+      body: "Django provides built-in support for serving static files like CSS and JavaScript."
+      datetime: 2024-02-03T18:10:00Z
+      update_at: 2024-02-03T18:40:00Z
+
+  - model: main.Post
+    pk: 8
+    fields:
+      title: "Django Middleware Explained"
+      body: "Middleware in Django processes requests and responses globally before views handle them."
+      datetime: 2024-02-02T13:25:00Z
+      update_at: 2024-02-02T13:55:00Z
+
+  - model: main.Post
+    pk: 9
+    fields:
+      title: "Authentication in Django"
+      body: "Django comes with a robust authentication system out of the box."
+      datetime: 2024-02-01T07:40:00Z
+      update_at: 2024-02-01T08:10:00Z
+
+  - model: main.Post
+    pk: 10
+    fields:
+      title: "Deploying Django Applications"
+      body: "Learn how to deploy your Django application using services like Heroku and AWS."
+      datetime: 2024-01-31T21:15:00Z
+      update_at: 2024-01-31T21:45:00Z

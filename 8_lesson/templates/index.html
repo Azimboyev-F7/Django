@@ -1,19 +1,78 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+   <!-- head content remains the same -->
 </head>
-<body>
-    <h1 class="header">Posts</h1>
-    <div class="posts">
-        {% if posts|length==0 %}
-        <h3 class="error">There are no posts yet </h3>
-        {% for post in posts %}
+<body id="top">
+   <header class="short-header">
+      <div class="gradient-block"></div>
+      <div class="row header-content">
+         <div class="logo">
+            <a href="#">Author</a>
+         </div>
 
-        {% endfor %}
-    </div>
+         <nav id="main-nav-wrap">
+            <ul class="main-navigation sf-menu">
+               <li class="current"><a href="#" title="">Home</a></li>
+               <li class="has-children">
+                  <a href="#" title="">Categories</a>
+                  <ul class="sub-menu">
+                     <li><a href="#">Wordpress</a></li>
+                     <li><a href="#">HTML</a></li>
+                     <li><a href="#">Photography</a></li>
+                     <li><a href="#">UI</a></li>
+                     <li><a href="#">Mockups</a></li>
+                     <li><a href="#">Branding</a></li>
+                  </ul>
+               </li>
+               <li class="has-children">
+                  <a href="#" title="">Blog</a>
+                  <ul class="sub-menu">
+                     <li><a href="#">Video Post</a></li>
+                     <li><a href="#">Audio Post</a></li>
+                     <li><a href="#">Gallery Post</a></li>
+                     <li><a href="#">Standard Post</a></li>
+                  </ul>
+               </li>
+               <li><a href="#" title="">Styles</a></li>
+               <li><a href="#" title="">About</a></li>
+               <li><a href="#" title="">Contact</a></li>
+            </ul>
+         </nav>
+
+         <!-- Article links -->
+         <article class="brick entry format-standard animate-this">
+            <div class="entry-thumb">
+               <a href="#" class="thumb-link">
+                  <img src="..." alt="building">
+               </a>
+            </div>
+         </article>
+
+         <!-- Footer links -->
+         <footer>
+            <div class="site-links">
+               <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+               </ul>
+            </div>
+
+            <div class="social-links">
+               <ul>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Dribbble</a></li>
+                  <li><a href="#">Google+</a></li>
+                  <li><a href="#">Instagram</a></li>
+               </ul>
+            </div>
+         </footer>
+      </div>
+   </header>
 </body>
 </html>

@@ -5,3 +5,12 @@ body{
 .header {
     color: red;
 }
+.error{
+    color:red;
+}
+
+post {
+    height: 175px;
+    weight: 150px;
+    color: red;
+}
