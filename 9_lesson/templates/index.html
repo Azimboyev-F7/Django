@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYZENN.UZ</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">RYZENN.UZ</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">O'zbekiston</a></li>
+                <li><a href="#">Jahon</a></li>
+                <li><a href="#">Iqtisodiyot</a></li>
+                <li><a href="#">Jamiyat</a></li>
+                <li><a href="#">Sport</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="featured-news">
+            <div class="main-news">
+                <img src="https://via.placeholder.com/600x400" alt="Main news">
+                <h2>Asosiy yangilik sarlavhasi</h2>
+                <p>Yangilik haqida qisqacha ma'lumot...</p>
+            </div>
+            <div class="secondary-news">
+                <article>
+                    <img src="https://via.placeholder.com/300x200" alt="News">
+                    <h3>Ikkinchi darajali yangilik</h3>
+                </article>
+                <article>
+                    <img src="https://via.placeholder.com/300x200" alt="News">
+                    <h3>Yana bir muhim yangilik</h3>
+                </article>
+            </div>
+        </div>
+
+        <div class="latest-news">
+            <h2>So'nggi yangiliklar</h2>
+            <div class="news-grid">
+                <!-- News items -->
+                <article class="news-item">
+                    <img src="https://via.placeholder.com/200x150" alt="News">
+                    <h4>Yangilik sarlavhasi</h4>
+                    <span class="time">2 soat oldin</span>
+                </article>
+                <!-- More news items... -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kun.uz</h3>
+                <p>© 2024 Barcha huquqlar himoyalangan</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
