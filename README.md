@@ -1,7 +1,7 @@
 # Django Project 🚀  
 
 ## Overview 📌  
-A Django-based web application for **[your project's purpose]**. Built with scalability, security, and performance in mind.  
+A Django-based web application for **[to pubish django projects]**. Built with scalability, security, and performance in mind.  
 
 ## Features ✨  
 - ✅ User authentication & authorization  
