@@ -11,18 +11,15 @@
     <title>Document</title>
 </head>
 <body>
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
+    {% block header %}
 
-        </div>
-        <div class="col-md-4">
+    {% endblock %}
 
-        </div>
-        <div class="col-md-4">
+    {% block content %}
 
-        </div>
-    </div>
+    {% endblock %}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

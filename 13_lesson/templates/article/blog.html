@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for new in news %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://i0.wp.com/therealnews.com/wp-content/uploads/2025/02/Gaza-Winter.jpg?w=1280&ssl=1"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ new.title }}</h5>
+                        <p class="card-text">{{ new.content }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <a href="{% url 'main:index' %}">Back to home page</a>
+    </div>
+{% endblock %}
