@@ -25,6 +25,7 @@ def details(request):
     news = New.objects.get(id=id)
 
     context = {
-        "news": news
+        "news": news,
+        'id': id
     }
-    return render(request, details, context)
+    return render(request, 'article/detail.html', context)
