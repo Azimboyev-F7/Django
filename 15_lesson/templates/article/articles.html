@@ -11,7 +11,7 @@
         {% for new in news %}
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://i0.wp.com/therealnews.com/wp-content/uploads/2025/02/Gaza-Winter.jpg?w=1280&ssl=1"
+                    <img src="{{ new.image.url }}"
                          class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ new.title }}</h5>
