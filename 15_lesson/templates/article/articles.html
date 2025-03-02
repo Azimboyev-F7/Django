@@ -15,6 +15,12 @@
                 <a href="./">article/</a>
             </figcaption>
             <div class="row">
+                <div class="col-md-4">
+                    <a href="{% url 'main:article-add' %}"
+                       class="btn btn-success offset-4 d-flex justify-content-center ">Add Data</a>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <form action="{% url 'main:article' %}" class="form-control mb-3 d-flex gap-2" method="get">
                         <input type="search" class="form-control" name="q" placeholder="search...">

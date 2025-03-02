@@ -27,6 +27,13 @@ def detail(request,pk):
     new = New.objects.get(id=pk)
     context = {
         "object": new,
-
     }
     return render(request, 'article/detail.html', context)
+
+def create(request):
+    new = New.objects.create()
+
+    context = {
+        "object": new,
+    }
+    return render(request, 'article/create.html', context)
