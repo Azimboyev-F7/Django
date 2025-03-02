@@ -11,22 +11,37 @@
         <div class="row">
             <h1>Article List</h1>
             <p>Article List Page</p>
-            {% for new in news %}
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        {% if new.image %}
-                            <img src="{{ new.image.url }}" alt="">
-                        {% else %}
-                            <h1 class="text-danger">No image</h1>
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">{{ new.title }}</h5>
-                            <p class="card-text">{{ new.content|slice:':200' }}</p>
-                            <a href="{% url 'main:detail' new.id %}" class="btn btn-primary">Go somewhere</a>
+            <figcaption class="blockquote-footer">
+                <a href="./">article/</a>
+            </figcaption>
+            <div class="row">
+                <div class="col">
+                    <form action="{% url 'main:article' %}" class="form-control mb-3 d-flex gap-2" method="get">
+                        <input type="search" class="form-control" name="q" placeholder="search...">
+                        <a href="" class="btn btn-success">Submit</a>
+                    </form>
+                </div>
+            </div>
+            {% if news %}
+                {% for new in news %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            {% if new.image %}
+                                <img src="{{ new.image.url }}" alt="">
+                            {% else %}
+                                <h1 class="text-danger">No image</h1>
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ new.title }}</h5>
+                                <p class="card-text">{{ new.content|slice:':200' }}</p>
+                                <a href="{% url 'main:detail' new.id %}" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <h3 class="text-danger">No found</h3>
+            {% endif %}
             <div>
                 <a href="{% url 'main:index' %}" class="back-home">⬅ Back to home page</a>
             </div>

@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import New
 
@@ -13,6 +14,10 @@ def index(request):
 
 def article(request):
     news = New.objects.all()
+
+    query = request.GET.get('q')
+    if query:
+        news = New.objects.filter(title__icontains=query)
     context = {
         "news": news,
     }
