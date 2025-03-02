@@ -18,9 +18,10 @@ def article(request):
     }
     return render(request, 'article/articles.html', context)
 
-def detail(request):
-    news = New.objects.get(pk=id)
+def detail(request,pk):
+    new = New.objects.get(id=pk)
     context = {
-        'id': news.id,
+        "object": new,
+
     }
     return render(request, 'article/detail.html', context)

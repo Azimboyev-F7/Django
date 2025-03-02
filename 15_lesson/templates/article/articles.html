@@ -3,23 +3,33 @@
 {% load static %}
 
 {% block header %}
-
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        {% for new in news %}
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ new.image.url }}"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ new.title }}</h5>
-                        <p class="card-text">{{ new.content }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container">
+        <div class="row">
+            <h1>Article List</h1>
+            <p>Article List Page</p>
+            {% for new in news %}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        {% if new.image %}
+                            <img src="{{ new.image.url }}" alt="">
+                        {% else %}
+                            <h1 class="text-danger">No image</h1>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ new.title }}</h5>
+                            <p class="card-text">{{ new.content|slice:':200' }}</p>
+                            <a href="{% url 'main:detail' new.id %}" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
+            {% endfor %}
+            <div>
+                <a href="{% url 'main:index' %}" class="back-home">⬅ Back to home page</a>
             </div>
-        {% endfor %}
+        </div>
     </div>
 {% endblock %}
