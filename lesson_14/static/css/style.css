@@ -9,6 +9,12 @@ body {
     padding: 0;
 }
 
+body {
+    background: url("../image/news.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+
 /* Adding a Dark Overlay */
 body::before {
     content: "";
@@ -33,7 +39,7 @@ body::before {
 }
 
 /* Heading Styling */
-h1 {
+.greeting {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;

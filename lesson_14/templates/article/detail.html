@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+
+{% block content %}
+	<div class="row">
+        <div class="col-12 mb-2">
+            <h1>Article Detail Page</h1>
+            <a href="{% url 'main:articles' %}">Article</a> / <span>detail</span>
+        </div>
+    <div class="col-12">
+        {% if article.image %}
+            <img src="{{ article.image.url }}" alt="...">
+            {% else %}
+            <h1 class="text-danger">No data</h1>
+        {% endif %}
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.content }}</p>
+    </div>
+    </div>
+{% endblock %}

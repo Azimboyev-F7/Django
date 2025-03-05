@@ -9,20 +9,21 @@
 
 
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <h1 class="greeting">Hello this is NEWS site if you're interested in news then click here |</h1>
+            <figure>
+                <blockquote class="blockquote">
+                    <p>WELCOME TO HOME PAGE</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    <a href="">home/</a>
+                </figcaption>
+            </figure>
 
-    <div class="row">
-        <h1>Hello this is NEWS site if you're interested in news then click here |</h1>
-        <figure>
-            <blockquote class="blockquote">
-                <p>WELCOME TO HOME PAGE</p>
-            </blockquote>
-            <figcaption class="blockquote-footer">
-                <a href="">home/</a>
-            </figcaption>
-        </figure>
-
-        <div class="turn">
-            <a href="{% url 'main:articles' %}">Turn to News</a>
+            <div class="turn">
+                <a href="{% url 'main:articles' %}">Turn to News</a>
+            </div>
         </div>
     </div>
 {% endblock %}

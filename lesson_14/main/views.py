@@ -1,4 +1,8 @@
+
 from django.shortcuts import render
+
+from main.models import Article
+
 
 # Create your views here.
 
@@ -10,7 +14,20 @@ def index(request):
 
 
 def articles(request):
-    context = {
+    articles = Article.objects.all()
 
+    query = request.GET.get("q")
+    if query:
+        articles = articles.filter(title__icontains=query)
+
+    context = {
+        'articles': articles,
     }
     return render(request, "article/articles.html", context)
+
+def detail(request, pk):
+    article = Article.objects.get(id=pk)
+    context = {
+        'article': article,
+    }
+    return render(request, "article/detail.html", context)
