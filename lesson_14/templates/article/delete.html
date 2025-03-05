@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h1>Are you sure?</h1>
+        <p>Are you sure you want to delete the selected article? All of the following objects and their related items
+            will be deleted:</p>
+        <strong>Summary</strong>
+        <ul>
+            <li>Articles: 1</li>
+        </ul>
+        <strong>Objects</strong>
+        <ul>
+            <li>Article: Article object (7)</li>
+        </ul>
+        <div class="col-md-4">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input class="btn btn-danger" value="Yes, I'm sure" type="submit">
+                <a href="{% url 'main:detail' artciles.id %}" class="btn btn-info">No, take me back</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.urls import reverse
 
 from main.models import Article
 
@@ -41,3 +43,16 @@ def create(request):
         'object_list': Article.objects.all(),
     }
     return render(request, "article/create.html", context)
+
+def delete(request, pk):
+    article = Article.objects.get(id=pk)
+
+    if request.method == "POST":
+        article.delete()
+        messages.error(request, 'Article deleted successfully!')
+        return redirect('main:articles')
+
+    context = {
+        'artciles': article,
+    }
+    return render(request, "article/delete.html", context)
