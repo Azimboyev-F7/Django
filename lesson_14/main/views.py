@@ -1,4 +1,4 @@
-
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from main.models import Article
@@ -31,3 +31,13 @@ def detail(request, pk):
         'article': article,
     }
     return render(request, "article/detail.html", context)
+
+def create(request):
+
+    if request.method == "POST":
+        article = Article.objects.create(title=request.POST["title"], content=request.POST["content"])
+        return HttpResponse(content='Article created successfully! <a href="../">Go home</a>')
+    context = {
+        'object_list': Article.objects.all(),
+    }
+    return render(request, "article/create.html", context)

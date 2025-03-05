@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="{% static 'css/article.css' %}">
     <h1>Article Page</h1>
     <p>Article List Page</p>
+    <a href="./" class="mb-2" style="text-decoration: none">Article/</a>
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="col">
+        <div class="col-md-4  offset-4 d-flex justify-content-center">
+            <a href="{% url 'main:create' %}" type="submit" class="btn btn-success">Add article</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 my-3">
             <form class="form-control d-flex mb-3 gap-2" action="" method="get">
                 <input type="search" name="q" class="form-control">
                 <button type="submit" class="btn btn-success">submit</button>
             </form>
+        </div>
+        <div class="col-4">
+            <span>{{ articles.count }} object found</span>
         </div>
     </div>
     <div class="row">
@@ -41,11 +51,12 @@
                     {#                <a href="index.html" class="back-home"> Back to Home</a>#}
                 </div>
             {% endfor %}
-            {% else %}
+        {% else %}
             <h1 class="text-danger">No found</h1>
         {% endif %}
         <div>
             <a href="{% url 'main:index' %}" class="back-home">⬅ Back to home page</a>
         </div>
     </div>
+
 {% endblock %}

@@ -8,19 +8,24 @@
 
 
 {% block content %}
-	<div class="row">
+    <div class="row">
         <div class="col-12 mb-2">
             <h1>Article Detail Page</h1>
             <a href="{% url 'main:articles' %}">Article</a> / <span>detail</span>
         </div>
-    <div class="col-12">
-        {% if article.image %}
-            <img src="{{ article.image.url }}" alt="...">
+        <div class="col-12">
+            {% if article.image %}
+                <img src="{{ article.image.url }}" alt="...">
             {% else %}
-            <h1 class="text-danger">No data</h1>
-        {% endif %}
-        <h3>{{ article.title }}</h3>
-        <p>{{ article.content }}</p>
-    </div>
+                <h1 class="text-danger">No data</h1>
+            {% endif %}
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.content }}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'main:create' %}" type="submit" class="btn btn-danger">Remove</a>
+            </div>
+        </div>
     </div>
 {% endblock %}
