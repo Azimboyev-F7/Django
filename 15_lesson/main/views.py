@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import New
 
 # Create your views here.
@@ -31,9 +32,25 @@ def detail(request,pk):
     return render(request, 'article/detail.html', context)
 
 def create(request):
-    new = New.objects.create()
 
+    if request.method == "POST":
+        New.objects.create(title=request.POST['title'], content=request.POST['content'])
+        messages.success(request, 'New successfully created!')
+        return redirect('main:article')
     context = {
-        "object": new,
+        "object": New.objects.all(),
     }
     return render(request, 'article/create.html', context)
+
+def remove(request, pk):
+    articles = New.objects.get(id=pk)
+    if request.method == "POST":
+        articles.delete()
+        messages.error(request, 'Article successfully removed!')
+        return redirect('main:article')
+
+    context = {
+        "object": articles,
+    }
+
+    return render(request, 'article/delete.html', context)

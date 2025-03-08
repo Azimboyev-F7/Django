@@ -10,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
+<div class="container">
+    {% include 'message.html' %}
     {% block header %}
 
     {% endblock %}
@@ -18,5 +20,6 @@
     {% block content %}
 
     {% endblock %}
+</div>
 </body>
 </html>
