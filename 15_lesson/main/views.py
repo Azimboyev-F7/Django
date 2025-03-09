@@ -47,20 +47,18 @@ def detail(request,pk):
 
 def create_form(request):
     form = NewForm()
-    if request.method == "POST":
+    if request.method == 'POST':
         form = NewForm(request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Article successfully created!')
+            messages.success(request, 'Form saved')
             return redirect('main:article')
-
-
     context = {
-        "object": New.objects.all(),
         'form': form,
-    }
-    return render(request, 'article/create.html', context)
+        'object_list': New.objects.all()
 
+    }
+    return render(request, 'article/create_form.html', context)
 
 def remove(request, pk):
     articles = New.objects.get(id=pk)
@@ -74,3 +72,22 @@ def remove(request, pk):
     }
 
     return render(request, 'article/delete.html', context)
+
+
+def update(request, pk):
+    articles = New.objects.get(id=pk)
+    form = NewForm(instance=articles)
+    if request.method == "POST":
+        form = NewForm(request.POST, instance=articles, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Form updated seccessfully!')
+            return redirect('main:article')
+    context = {
+        "object": articles,
+        "form": form,
+
+    }
+    return render(request, 'article/edit.html', context)
+
+
