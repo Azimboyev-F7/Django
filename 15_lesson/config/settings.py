@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     # INSTALLED
     "main",
+    "auth_user",
 ]
 
 MIDDLEWARE = [

@@ -1,33 +1,32 @@
-{#{% extends 'base.html' %}#}
-{##}
-{#{% load static %}#}
-{##}
-{#{% block header %}#}
-{##}
-{#{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#    <div class="container">#}
-{#        <div class="row">#}
-{#            <div class="col">#}
-{#                <form action="" method="post">#}
-{#                    {% csrf_token %}#}
-{#                    <div class="mb-3">#}
-{#                        <label for="exampleInputTitle" class="form-label">Email address</label>#}
-{#                        <input type="text" name="title" class="form-control" id="exampleInputTitle" aria-describedby="">#}
-{#                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
-{#                    </div>#}
-{#                    <div class="mb-3">#}
-{#                        <label for="exampleInputContent" class="form-label">Password</label>#}
-{#                        <input type="text" name="content" class="form-control" id="exampleInputContent">#}
-{#                    </div>#}
-{#                    <div class="mb-3">#}
-{#                        <input type="file" name="image" class="form-control" id="exampleCheck1">#}
-{#                        <label class="form-label" for="exampleCheck1"></label>#}
-{#                    </div>#}
-{#                    <button type="submit" class="btn btn-primary">Submit</button>#}
-{#                </form>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#{% endblock %}#}
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="exampleInputTitle" class="form-label">Email address</label>
+                        <input type="text" name="title" class="form-control" id="exampleInputTitle" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputContent" class="form-label">Password</label>
+                        <input type="text" name="content" class="form-control" id="exampleInputContent">
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" name="image" class="form-control" id="exampleCheck1">
+                        <label class="form-label" for="exampleCheck1"></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
