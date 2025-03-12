@@ -15,13 +15,6 @@
             <a href="./">article/</a>
         </figcaption>
         <div class="row">
-            <div class="col-md-4 offset-4 d-flex justify-content-center ">
-                <a href="{% url 'main:create-form' %}" class="btn btn-success">Add Date form</a>
-                {#                    <a href="{% url 'main:article-add' %}"#}
-                {#                       class="btn btn-success">Add Data</a>#}
-            </div>
-        </div>
-        <div class="row">
             <div class="col">
                 <form action="{% url 'main:article' %}" class="form-control mb-3 d-flex gap-2" method="get">
                     <input type="search" class="form-control" name="q" placeholder="search...">

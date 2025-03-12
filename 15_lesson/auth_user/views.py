@@ -25,3 +25,13 @@ def login_view(request):
     }
 
     return render(request, 'auth/login.html', context)
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        messages.success(request, 'You are now logged out')
+        return redirect('main:article')
+
+    context = {}
+
+    return render(request, 'auth/logout.html', context)

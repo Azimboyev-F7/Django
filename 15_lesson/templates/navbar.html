@@ -14,11 +14,11 @@
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                            Dropdown button
+                            Dropdown
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'main:create' %}">Add Article</a></li>
-                            {#                            <li><a class="dropdown-item" href="{% url 'main:create_form' %}">Add Article Form</a></li>#}
+                            <li><a class="dropdown-item" href="{% url 'main:create-form' %}">Add Article Form</a></li>
                         </ul>
                     </div>
                 </li>
@@ -32,6 +32,7 @@
         </div>
         {% if request.user.is_authenticated %}
             {{ request.user.username }}
+            <a href="{% url 'auth_user:logout' %}" class="btn btn-danger">Log Out</a>
         {% else %}
             <a href="{% url 'auth_user:login' %}" class="btn btn-outline-success">LOGIN</a>
         {% endif %}
