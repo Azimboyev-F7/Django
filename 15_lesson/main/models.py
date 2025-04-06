@@ -7,7 +7,7 @@ from django.db.models.signals import post_save, pre_save
 class New(models.Model):
     image = models.ImageField(upload_to='images/',null=True,blank=True)
     title = models.CharField(max_length=221)
-    slug = models.SlugField()
+    slug = models.SlugField(null=True, blank=True)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -22,3 +22,6 @@ def pre_save_new_receiver(sender, instance, *args, **kwargs):
     if New.objects.filter(slug=slugify(instance.title)).exclude(id=instance.id).exists():
         import uuid
         instance.slug += f"{slugify(instance.title)}-{uuid.uuid4()}"
+
+
+pre_save.connect(pre_save_new_receiver, sender=New)

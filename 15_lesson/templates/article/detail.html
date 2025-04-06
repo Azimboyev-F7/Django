@@ -26,8 +26,8 @@
 
     <div class="row">
         <div class="co-md-4">
-            <a href="{% url 'main:article-remove' object.id %}" class="btn btn-danger">Remove Article</a>
-            <a href="{% url 'main:update' object.id %}" class="btn btn-info" style="color: white">Update</a>
+            <a href="{% url 'main:article-remove' object.slug %}" class="btn btn-danger">Remove Article</a>
+            <a href="{% url 'main:update' object.slug %}" class="btn btn-info" style="color: white">Update</a>
         </div>
     </div>
 {% endblock %}

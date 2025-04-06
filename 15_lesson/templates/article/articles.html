@@ -34,7 +34,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ new.title }}</h5>
                             <p class="card-text">{{ new.content|slice:':200' }}</p>
-                            <a href="{% url 'main:detail' new.id %}" class="btn btn-primary">Go somewhere</a>
+                            <a href="{% url 'main:detail' new.slug %}" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>

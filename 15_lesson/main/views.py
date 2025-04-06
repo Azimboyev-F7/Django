@@ -26,8 +26,9 @@ def article(request):
     }
     return render(request, 'article/articles.html', context)
 
-def detail(request,pk):
-    new = New.objects.get(id=pk)
+def detail(request,slug):
+    
+    new = New.objects.get(slug=slug)
     context = {
         "object": new,
     }
@@ -61,8 +62,8 @@ def create_form(request):
     }
     return render(request, 'article/create_form.html', context)
 
-def remove(request, pk):
-    articles = New.objects.get(id=pk)
+def remove(request, slug):
+    articles = New.objects.get(slug=slug)
     if request.method == "POST":
         articles.delete()
         messages.error(request, 'Article successfully removed!')
@@ -75,8 +76,8 @@ def remove(request, pk):
     return render(request, 'article/delete.html', context)
 
 
-def update(request, pk):
-    articles = New.objects.get(id=pk)
+def update(request, slug):
+    articles = New.objects.get(slug=slug)
     form = NewForm(instance=articles)
     if request.method == "POST":
         form = NewForm(request.POST, instance=articles, files=request.FILES)
