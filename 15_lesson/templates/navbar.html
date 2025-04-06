@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    {% load static %}
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'main:article' %}">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,11 +31,23 @@
                 </li>
             </ul>
         </div>
-        {% if request.user.is_authenticated %}
-            {{ request.user.username }}
-            <a href="{% url 'auth_user:logout' %}" class="btn btn-danger">Log Out</a>
-        {% else %}
-            <a href="{% url 'auth_user:login' %}" class="btn btn-outline-success">LOGIN</a>
-        {% endif %}
+        <div class="row">
+            {% if request.user.is_authenticated %}
+                <div>
+                    <button class="btn btn-light shadow-sm rounded-pill px-3 py-2 dropdown-toggle d-flex align-items-center" 
+                            id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'image/unknown.jpg' %}" 
+                                alt="Profile Picture" class="rounded-circle me-2 border" 
+                                width="40" height="40">
+                        <span class="fw-bold text-dark">{{ user.username }}</span>
+                        <a class="dropdown-item py-2 text-danger" href="{% url 'auth_user:logout' %}">🚪 Logout</a>
+                    </button>
+                </div>
+            {% else %}
+                <a href="{% url 'auth_user:login' %}" class="btn btn-danger text-white px-4 py-2 rounded-pill shadow-sm">
+                    LOGIN
+                </a>
+            {% endif %}
+        </div>
     </div>
 </nav>
